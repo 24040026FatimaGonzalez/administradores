@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | DevStack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">DevStack</a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <span id="nombre-admin" class="admin-name"></span>
+                <button class="btn btn-outline-secondary btn-sm" id="btn-logout">
+                    Cerrar sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+
+        <!-- HEADER -->
+        <div class="dashboard-header mb-5">
+            <span class="section-label">// Panel de control</span>
+            <h1 class="dashboard-title">Administrador</h1>
+            <p class="dashboard-sub">Gestiona los cursos de la plataforma</p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- FORMULARIO -->
+            <div class="col-lg-4">
+                <div class="form-panel">
+                    <h5 class="form-panel-title" id="form-titulo">Nuevo Curso</h5>
+
+                    <div id="form-error"   class="alert alert-danger  d-none"></div>
+                    <div id="form-success" class="alert alert-success d-none"></div>
+
+                    <form id="form-curso">
+                        <input type="hidden" id="curso-id">
+
+                        <div class="mb-3">
+                            <label for="nombre-curso" class="form-label">Nombre del Curso</label>
+                            <input type="text" class="form-control" id="nombre-curso" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="instructor" class="form-label">Instructor</label>
+                            <input type="text" class="form-control" id="instructor" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="horas" class="form-label">Horas</label>
+                                <input type="number" class="form-control" id="horas" min="1" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="nivel" class="form-label">Nivel</label>
+                                <select class="form-select" id="nivel" required>
+                                    <option value="">— Nivel —</option>
+                                    <option value="Básico">Básico</option>
+                                    <option value="Intermedio">Intermedio</option>
+                                    <option value="Avanzado">Avanzado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label for="fecha-inicio" class="form-label">Fecha Inicio</label>
+                                <input type="date" class="form-control" id="fecha-inicio" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="costo" class="form-label">Costo ($)</label>
+                                <input type="number" class="form-control" id="costo"
+                                       step="0.01" min="0" required>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-dark" id="btn-guardar">
+                                Guardar Curso
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary d-none"
+                                    id="btn-cancelar">
+                                Cancelar edición
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- TABLA -->
+            <div class="col-lg-8">
+                <div class="table-panel">
+                    <div class="table-panel-header">
+                        <span class="section-label">Cursos Registrados</span>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Curso</th>
+                                    <th>Instructor</th>
+                                    <th>Horas / Nivel</th>
+                                    <th>Inicio</th>
+                                    <th>Costo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-cursos"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

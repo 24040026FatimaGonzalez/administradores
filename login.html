@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | DevStack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="layout-auth">
+
+    <main class="auth-wrapper">
+
+        <div class="auth-header">
+            <a href="index.html" class="auth-brand">DevStack</a>
+            <p class="auth-sub">// Inicia sesión en tu cuenta</p>
+        </div>
+
+        <div class="auth-card">
+
+            <div id="error-msg" class="alert alert-danger d-none"></div>
+
+            <form id="form-login">
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo"
+                           placeholder="usuario@ejemplo.com" autocomplete="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena"
+                           placeholder="••••••••" autocomplete="current-password" required>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100 mt-2">
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="auth-divider"></div>
+
+            <p class="auth-link-text">
+                ¿No tienes cuenta?
+                <a href="registro.html">Regístrate aquí</a>
+            </p>
+
+            <div class="admin-hint">
+                <span class="hint-label">Demo admin</span>
+                admin@cursos.com &nbsp;/&nbsp; 12345
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="index.html" class="back-link">← Volver al inicio</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

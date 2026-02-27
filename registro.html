@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta | DevStack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="layout-auth">
+
+    <main class="auth-wrapper">
+
+        <div class="auth-header">
+            <a href="index.html" class="auth-brand">DevStack</a>
+            <p class="auth-sub">// Crea tu cuenta gratis</p>
+        </div>
+
+        <div class="auth-card">
+
+            <div id="error-msg"   class="alert alert-danger  d-none"></div>
+            <div id="success-msg" class="alert alert-success d-none"></div>
+
+            <form id="form-registro">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" id="nombre"
+                           placeholder="David López" autocomplete="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" id="correo"
+                           placeholder="correo@ejemplo.com" autocomplete="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="celular" class="form-label">
+                        Celular <span class="label-optional">(opcional)</span>
+                    </label>
+                    <input type="text" class="form-control" id="celular"
+                           placeholder="8441234567" autocomplete="tel">
+                </div>
+
+                <div class="mb-3">
+                    <label for="contrasena" class="form-label">
+                        Contraseña <span class="label-optional">(mín. 4 caracteres)</span>
+                    </label>
+                    <input type="password" class="form-control" id="contrasena"
+                           placeholder="••••••••" autocomplete="new-password" required minlength="4">
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100 mt-2">
+                    Crear cuenta
+                </button>
+
+            </form>
+
+            <div class="auth-divider"></div>
+
+            <p class="auth-link-text">
+                ¿Ya tienes cuenta?
+                <a href="login.html">Inicia sesión</a>
+            </p>
+
+            <div class="text-center mt-3">
+                <a href="index.html" class="back-link">← Volver al inicio</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
